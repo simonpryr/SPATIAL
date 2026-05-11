@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strawberry Site Suitability</title>
+    <link rel="shortcut icon" href="Strawberry.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+     <script src="suitability_updated2.js"></script>
+     <!-- <script src="Boundary.js"></script> -->
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- source to input the fab icons "https://cdnjs.com/libraries/font-awesome" -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+</head>
+<body>
+     <header>
+<!--     New Navigation Bar to make it more user Friendly, referece taken from https://www.youtube.com/watch?v=wHFflWvii3M&list=LL&index=2 -->
+    <!-- <div class="menu-bar"> -->
+      <!-- <ul> -->
+        <!-- <li><a href="index.html"><i class="fa fa-solid fa-house-user"></i>Home</a></li> -->
+        <!-- <li class="active"><a href="portfolio.html" target="_blank"><i class="fa fa-user"></i>Portfolio</a></li> -->
+        <!-- <li><a href="#"><i class="fa fa-thin fa-pen-to-square"></i></i>Blog</a></li> -->
+        
+      <!-- </ul> -->
+    <!-- </div> -->
+  </header>
+    <div class="heading"> <h1>Site Suitability Analysis For Strawberry Cultivation in Simcoe County Using GIS-AHP</h1></div>
+    <br>
+    <div class="map_container">
+    <div id="map"></div></div>
+
+    <div class="methodology">
+        <h2>Suitability Description:</h2>
+        <p>This map highlights the areas most suitable for strawberry production in Simcor County. AHP 
+            pairwise comparison was conducted to evaluate and prioritize key factors influencing
+            suitability, including soil texture, soil drainage, aspect, slope, average summer
+            temperature, soil pH, landcover, and annual rainfall data accessed from different 
+            open source. These parameters were integrated using the Weighted Overlay tool 
+            in ArcGIS Pro, allowing for a comprehensive spatial analysis. As a result, the most favorable 
+            zones for strawberry cultivation were identified.
+        </p>
+        <h2>Methodology:</h2>
+        <p>In order to assess the suitability for strawberry production, each parameter was classified on a scale from 
+            1 to 7, where 1 represent the highly suitable and 7 represents the highly unsuitable area. 
+            The analysis was based on eight key environmental and physical parameters: soil texture, 
+            soil drainage, aspect, slope, average summer temperature, soil pH, land cover, and annual 
+            rainfall. Each parameter was individually reclassified based on its influence 
+            on strawberry growth.
+        </p>
+        <img src="p1_1.jpg" alt="parameter suitability" width="1200px" >
+        <p>A weight was then assigned to each parameter through the Analytical Hiererchy 
+            Process (AHP) to reflect its relative importance.The Weighted Overlay tool in 
+            ArcGIS Pro was used to combine all reclassified layers into a single composite 
+            suitability map. Finally, the resulting layer was reclassified into suitability 
+            zones to identify areas most appropriate for strawberry cultivation in Simcoe County.</p>
+        <img src="p1_2.png" alt="parameter suitability" width="800px" >
+        <h2>Result:</h2>
+        <img src="P1_5.png" alt="Result" width="600px">
+        <p>The analysis identified that most areas in Simcoe County have favorable conditions for strawberry 
+            cultivation. About 0.9% (41.3 km²) of the land is highly suitable, while 55.2% (2,511.2 km²) is 
+            suitable and 33.0% (1,499.8 km²) is moderately suitable. Only a small portion, around 10.5%, is 
+            unsuitable or moderately unsuitable due to poor drainage, steep slopes, or unfavorable soil conditions. 
+            Overall, the study shows that Simcoe County has strong potential for expanding strawberry production, 
+            especially in the central and northern regions with good soil and drainage conditions.
+        </p>
+        <button class="button"><a href="P1_Strawberry.jpg" target="_blank">Click to preview static map.</a></button>
+        <h2>Annex:</h2>
+        <img src="P1_3.png" alt="Annex: 1" width="1200px">
+        <img src="P1_4.png" alt="Annex: 2" width="1200px">
+    </div>
+
+    <!-- <div class="description">
+        <h1>Site Suitability Analysis for Strawberry Cultivation in Simcoe County</h1>
+    </div>
+    </div> -->
+    <script>
+        // Options for several base maps in leaflet
+//         var map = L.map('map').setView([44.3893, -79.690331], 9.45);
+//         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//         maxZoom: 19,
+//         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+// }).addTo(map);
+        //     var map = L.map('map').setView([44.3893, -79.690331], 9.45);
+        //     L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.{ext}', {
+        //     minZoom: 0,
+        //     maxZoom: 19,
+        //     attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        //     ext: 'png'
+        // }).addTo(map);
+            var map = L.map('map').setView([44.3593, -79.690331],9.49);
+            L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.{ext}', {
+	        minZoom: 0,
+	        maxZoom: 29,
+	        attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+	        ext: 'png'
+        }).addTo(map);;
+
+        // Example from documentation
+        // L.geoJson(suitability).addTo(map);
+        // var geojson = L.geoJson(suitability, {
+        //     style: style,
+        //     onEachFeature: onEachFeature
+        // }).addTo(map);
+
+        // to add color for each suitability criteria
+        function getColor(Suitabilit) {
+            return Suitabilit === "Highly Suitable" ? '#1b7837' :
+                Suitabilit === "Suitable"  ? '#7fbf7b' :
+                Suitabilit === "Moderately Suitable" ? '#d9f0d3' :
+                Suitabilit === "Neither Suitable nor Unsuitable"  ? '#f7f7f7' :
+                Suitabilit === "Moderately Unsuitable"   ? '#e7d4e8' :
+                '#fc1d00';
+            }
+        
+        // to add border thickness and color (styling part)
+        function style(feature) {
+            return {
+                fillColor: getColor(feature.properties.Suitabilit),
+                weight: 0.1,
+                opacity: 0.5,
+                color: 'black',
+                fillOpacity: 3
+            };
+        }
+
+
+       function onEachFeature(feature, layer) {
+            layer.on({
+                mouseover: function (e) {
+                    info.update(e.target.feature.properties); // update info on hover
+                },
+                mouseout: function (e) {
+                    info.update(); // reset info when mouse leaves
+                }
+            });
+        }
+
+        var geojson = L.geoJson(suitability, {
+            style: style,
+            onEachFeature: onEachFeature
+        }).addTo(map);
+        // Trying to learn from documentation
+        // L.geoJson(suitability, {style: style}).addTo(map);
+        //  function highlightFeature(e) {
+        //     var layer = e.target;
+
+        //     layer.setStyle({
+        //         weight: 50,
+        //         color: '#666',
+        //     });
+
+        //     layer.bringToFront();
+        // }
+        
+        // function resetHighlight(e) {
+        //     geojson.resetStyle(e.target);
+        // }
+
+        // function zoomToFeature(e) {
+        //     map.fitBounds(e.target.getBounds());
+        // }
+        // function onEachFeature(feature, layer) {
+        //     layer.on({
+        //         // mouseover: highlightFeature,
+        //         // mouseout: resetHighlight,
+        //         click: zoomToFeature
+        //     });
+        // }
+         // Store the layer in geojson variable so resetHighlight() works
+        //  var geojson = L.geoJson(suitability, {
+        //     style: style,
+        //     onEachFeature: onEachFeature
+        // }).addTo(map);
+        // L.geoJson(suitability, , {style: style}).addTo(map);
+        var info = L.control();
+
+        info.onAdd = function (map) {
+            this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+            this.update();
+            return this._div;
+        };
+
+        // method that we will use to update the control based on feature properties passed
+        // This will add the description which changes when we hover in diffefenr places and updates the value
+        info.update = function (props) {
+            this._div.innerHTML = '<h4>Suitability Zone</h4>' +  (props ?
+                '<b>' + "The Zone is: " + '</b><br />' + props.Suitabilit
+                : 'Hover over the zone');
+        };
+
+        info.addTo(map);
+    //    This will crete a legend portion and adds to the map
+        var legend = L.control({position: 'bottomright'})
+        legend.onAdd = function (map) {
+            var div = L.DomUtil.create('div', 'info legend'),
+            categories = ["Highly Suitable", "Suitable", "Moderately Suitable", "Neither Suitable nor Unsuitable", "Moderately Unsuitable"];
+        for (var i =0; i < categories.length; i++) {
+            div.innerHTML +=
+                '<i style="background:' + getColor(categories[i]) + '; width: 20px; height: 20px; display: inline-block; margin-right: 8px;"></i>' +
+            categories[i] + '<br>';
+        }
+        return div;
+        };
+        legend.addTo(map)
+
+    </script>
+    <!-- <footer class="footer"> -->
+    <!-- Links Option Begin -->
+    <!-- <ul> -->
+      <!-- source to input the fab icons "https://cdnjs.com/libraries/font-awesome" -->
+      <!-- <li><a href="https://www.facebook.com/christian.simonsamrat" target="_blank"><i -->
+            <!-- class="fab fa-facebook-f"></i></a>Facebook</li> -->
+      <!-- <li><a href="https://www.instagram.com/cmongrace/?hl=en" target="_blank"><i -->
+            <!-- class="fab fa-instagram"></i></a>Instagram</li> -->
+      <!-- <li><a href="https://www.linkedin.com/in/simon-pariyar-96093819b/" target="_blank"><i -->
+            <!-- class="fab fa-linkedin-in"></i></a> LinkedIn</li> -->
+    </ul>
+    <!-- Links Option End -->
+  </footer>
+</body>
+</html>

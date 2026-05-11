@@ -1,0 +1,158 @@
+#map { 
+    position: absolute;
+    z-index: 0;
+    height: 600px;
+    width: 60vw; 
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.map_container {
+    display: flex;
+    justify-content: center;
+}
+.heading {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.heading h1 {
+      border: 1.5px solid rgb(211, 182, 182);     /* border around heading */
+      border-radius: 10px;      /* rounded corners */
+      padding: 15px;            /* space inside border */
+      text-align: center;       /* center the text */
+      background: #f9f9f9;      /* light background */
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* subtle shadow */
+      font-size: 22px;
+      font-family: sans-serif;
+    }
+
+.info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+
+.info.legend {
+    background: white;
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.methodology {
+  margin: 40% 10% 5% 10%;
+  border-radius: 20px;
+  background-color: rgb(65, 64, 64);
+  padding-bottom: 50px;
+  border: 1px lightslategray solid;
+  
+}
+
+.methodology img {
+    margin: 30px 50px;
+}
+
+.methodology h2 {
+  padding: 15px 50px;
+  color: white;
+  text-decoration: underline rgb(211, 182, 182);
+}
+.methodology p {
+  font-size: 18px;
+  text-align: justify;
+  margin: 10px 50px 0 50px;
+  color: white;
+  font-family: sans-serif;
+}
+/* css for button coppied from  https://cssnippets.shefali.dev/buttons?_gl=1*1lafttd*_ga*OTEwMTI2OTkyLjE3NjE1MDQ5NTE.*_ga_YPD33G18HE*czE3NjE1MDQ5NTAkbzEkZzAkdDE3NjE1MDQ5NTYkajU0JGwwJGgw*/
+
+.button {
+    width: 200px;
+    height: 60px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(211, 182, 182);
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    margin: 10px 0 0 50px;
+}
+.button a{
+    color: white;
+    font-family: sans-serif;
+    text-decoration: none;
+
+}
+.button:before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glow 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+.button:active:after {
+    background: transparent;
+}
+.button:hover:before {
+    opacity: 1;
+}
+.button:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(211, 182, 182);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+@keyframes glow {
+    0% {
+      background-position: 0 0;
+    }
+  
+    50% {
+      background-position: 400% 0;
+    }
+  
+    100% {
+      background-position: 0 0;
+    }
+}
+/* Css for button ends here */

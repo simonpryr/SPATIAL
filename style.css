@@ -1,0 +1,358 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* to style the header section and make its position sticky */
+header {
+  position: fixed;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+/* Styles the background color  */
+body {
+  background-color: rgb(170, 170, 159);
+}
+
+/* Style section of Navigation Bar to make it user friendly, reference taken from: https://www.youtube.com/watch?v=wHFflWvii3M&list=LL&index=2  */
+/* Sets the background color and aligns the item inside the menu-bar class to the center  */
+.menu-bar {
+  background-color: lightslategray;
+  text-align: center;
+}
+.menu-bar ul {
+  display: inline-flex;
+  list-style: none;
+}
+
+.menu-bar ul li {
+  width: 250px;
+  margin: 8px;
+  padding: 8px;
+}
+/* removes the list type and set the text type and color.  */
+.menu-bar ul li a {
+  text-decoration: none;
+  color: white;
+  font-family: 'poppins', sans-serif;
+}
+/* Provides background color in the active page and sets the border radius  */
+.active,
+.menu-bar ul li:hover {
+  background-color: rgb(211, 182, 182);
+  border-radius: 3px;
+}
+
+.menu-bar .fa {
+  margin-right: 8px;
+  /* height: 50px; */
+}
+
+/* To make a responsive Nav bar  */
+@media screen and (max-width: 1160px) {
+  .menu-bar ul li {
+    width: 200px
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .menu-bar ul li {
+    width: 150px
+  }
+}
+
+@media screen and (max-width: 735px) {
+  .menu-bar ul li {
+    width: 110px
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .menu-bar ul li {
+    width: 103px;
+  }
+}
+@media screen and (max-width: 422px) {
+  .menu-bar ul li {
+    width: 103px;
+  }
+  .image-section {
+    width: 300px;
+ }
+}
+/*Styles the pp id  */
+/* #pp {
+  padding: 50px 120px;
+  display: flex;
+  justify-content: right;
+} */
+
+/* provides the circular border */
+/* #pp img {
+  border-radius: 50%;
+} */
+
+/* stye the main_content class to display side wise */
+.main_content {
+  display: flex;
+  justify-content: space-evenly;
+  height: 500px;
+  margin: 0 100px;
+  align-items: center;
+  margin-top: 80px;
+}
+/* to align the items inside the content class to center */
+.Content {
+  align-items: center;
+  max-width: 1000px;
+  /* background-color: aquamarine; */
+  padding: 30px;
+  border: 2px lightslategray solid;
+  border-radius: 20px;
+}
+
+/* styling the h1 element inside the content class name */
+.Content h1 {
+  display: block;
+  color: rgb(9, 9, 9);
+  /* text-shadow: 5px 5px 10px rgb(121, 93, 187); */
+  margin-bottom: 0;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+/* Styles every text inside the h3 element */
+h3 {
+  font-size: 30px;
+  margin-top: 10px;
+  font-family: sans-serif;
+    font-weight: bold;
+}
+
+/* styling cont_aboutme container for about me part */
+
+.cont_aboutme {
+  margin: 5% 10%;
+  border-radius: 20px;
+  background-color: rgb(65, 64, 64);
+  padding-bottom: 50px;
+  border: 1px lightslategray solid;
+  
+}
+
+.cont_aboutme h3 {
+  padding: 15px 50px;
+  color: white;
+  text-decoration: underline rgb(211, 182, 182);
+}
+.cont_aboutme p {
+  font-size: 18px;
+  text-align: justify;
+  margin: 10px 50px 0 50px;
+  color: white;
+  font-family: sans-serif;
+}
+/* styling the id named "aboutme" to align the text to center */
+
+.Content p {
+  margin-top: 18px;
+  text-align: justify;
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+/* width of container class is set to 80%, displays the content in a line and provides space between the content inside the container class*/
+.container {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 45px;
+}
+
+/* Styling cont_whatido container */
+.cont_whatido {
+  /* display: flex; */
+  margin: 5% 10%;
+  border-radius: 20px;
+  background-color: rgb(65, 64, 64);
+  padding-bottom: 50px;
+  border: 1px lightslategray solid;
+}
+
+.whatidobox {
+  padding-left: 5%;
+  display: flex;
+   flex-wrap: wrap;
+}
+
+
+
+.cont_whatido h3 {
+  padding: 15px 50px;
+  color: white;
+}
+
+.content_topic {
+  display: flex;
+  width: 300px;
+  border: 1px solid rgb(211, 182, 182);;
+  border-radius: 8px;
+  margin: 20px;
+  padding: 20px;
+}
+.content_topic2 {
+  width: 300px;
+  border: 1px solid rgb(211, 182, 182);;
+  border-radius: 8px;
+  margin: 20px;
+  padding: 20px;
+}
+
+.service_icon {
+  padding-right: 20px;
+}
+
+.service_icon img {
+  /* background-color: rgba(240, 107, 107, 0.032); */
+  filter: invert(100%) sepia(100%) saturate(500%) hue-rotate(200deg);
+}
+
+.service h4 {
+  color: white;
+  font-family: sans-serif;
+  font-size: 22px;
+  /* text-align: center;
+  padding-top: 10px; */
+}
+.service2 h4 {
+  color: white;
+  font-family: sans-serif;
+  font-size: 22px;
+  text-align: center;
+  padding-top: 10px;
+}
+.service p {
+  color: white;
+  font-family: sans-serif;
+  padding-top: 10px;  
+}
+
+.service2 p {
+  color: white;
+  font-family: sans-serif;
+  padding-top: 10px;  
+  text-align: center;
+}
+
+/* provides the position of footer, its height,weight and background color */
+.footer {
+  position: relative;
+  bottom: 0;
+  height: 4%;
+  width: 100%;
+  /* background-color: lightgray; */
+}
+.footer i {
+  color: black;
+  font-size: 23px;
+  line-height: 40px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: rgb(168, 206, 206);
+  margin: 5px 15px;
+}
+/* displays the list items in a single line, provides the size of font and places the list items in the center */
+.footer ul {
+  list-style: none;
+  display: flex;
+  margin: 10px;
+  padding: 0;
+  font-size: large;
+  justify-content: center;
+}
+
+/* Css styling for page2 "aboutme.html" */
+/* Provides the width of section class*/
+.section {
+  width: 100%;
+}
+
+/* provides the width of container1 class, make it block and provides margin and padding */
+.section .container1 {
+  width: 80%;
+  display: block;
+  margin: 10px auto;
+  padding: 50px 0;
+}
+
+/*  Provides margin and aligns the text to center */
+.container1 #title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Makes the h1 element a block, convert the text to uppercase, sets the font size and color  */
+.container1 #title h1 {
+  display: block;
+  text-transform: uppercase;
+  font-size: 35px;
+  color: rgb(47, 47, 77);
+  font-family: sans-serif;
+}
+
+/* provides width to the class content1 and aligns item  to the left*/
+.content1 {
+  width: 100%;
+}
+
+/* Makes the h2 element a block, provides margin and sets the font property */
+.content1 h2 {
+  display: block;
+  margin-top: 60px;
+  font-size: 20px;
+  font-family: sans-serif;
+  color: black;
+  font-style: normal;
+}
+
+/* provides  width to the class image-section and aligns item  to the right */
+.image-section {
+  margin-top: 40px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* provides border to the image */
+.image-section img {
+  border-radius: 10%;
+}
+
+/* style for fab icon taken from source https://www.youtube.com/watch?v=jNih6HMvZh0 */
+.social-media {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 150px;
+  text-align: center;
+  display: inline-block;
+}
+
+/* this selection provides the color of the fab icon, changes the size, provides the border height,weight, and radius, background color and margin to the fab icons */
+.social-media i {
+  color: black;
+  font-size: 23px;
+  line-height: 40px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  /* text-align: center; */
+  background-color: rgb(168, 206, 206);
+  margin: 5px 15px;
+}
